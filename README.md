@@ -4,6 +4,14 @@
 
 **Curiosity队伍方案（B榜Rank3，A榜Rank12）**
 
+## 0 整体思路
+
+- 对训练集进行**数据预处理**
+- 通过**特征工程**构造总共21个特征
+- 使用**五折DCN（Deep&Cross Network）模型**进行训练和预测
+
+## 1 方案介绍
+
 ### 1.1 数据预处理
 
 对开源baseline代码进行一定修改，读取数据，按照测试集中出现的userid和videoid对训练集进行数据筛选，最后得到2000w左右的数据作为训练集。
@@ -75,8 +83,3 @@ Deep&Cross Network，简称DCN模型。谷歌和斯坦福大学在2017年提出�
 - `preprocess_data.ipynb`: **预处理函数**。筛选训练集数据、对训练集和测试集进行label encode，处理结束后的训练集和测试集分别保存为`df_train_sp.pkl`和`df_test_sp.pkl`。【NOTE：**无需运行**，数据已保存至`../temp_data/`】
 - `utils.py`: **工具函数**（减少内存函数等）
 
-## 1 整体思路
-
-- 对训练集进行**数据预处理**
-- 通过**特征工程**构造总共21个特征
-- 使用**五折DCN（Deep&Cross Network）模型**进行训练和预测
